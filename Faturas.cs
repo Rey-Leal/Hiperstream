@@ -1,6 +1,7 @@
 ﻿
 public class Faturas
 {
+    // Realiza leitura e processamento do Arquivo de Faturas
     public bool ProcessarFaturas(string arquivoDeFaturas)
     {
         try
