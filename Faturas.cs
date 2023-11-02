@@ -1,49 +1,68 @@
 ﻿
 public class Faturas
 {
-    // Realiza leitura e processamento do Arquivo de Faturas
+    // Realiza leitura e processamento do arquivo de faturas
     public bool ProcessarFaturas(string arquivoDeFaturas)
     {
         try
         {
-            string linha;
+            List<string[]> listaDaFatura = new List<string[]>();
+            string[] dadosDaFatura;
+            string linhaDaFatura;
+
+            // Verifica existencia do arquivo de faturas
             bool existeArquivo = File.Exists(arquivoDeFaturas);
 
             if (existeArquivo)
             {
+                // Realiza leitura do arquivo de faturas e armazena dados na lista
                 using (StreamReader reader = new StreamReader(arquivoDeFaturas))
                 {
-                    while ((linha = reader.ReadLine()) != null)
+                    while ((linhaDaFatura = reader.ReadLine()) != null)
                     {
-                        Console.WriteLine(linha);
+                        dadosDaFatura = linhaDaFatura.Split(';');
+                        listaDaFatura.Add(dadosDaFatura);
+                    }
+
+                    // Percorre lista da fatura realizando comparacoes necessarias
+                    foreach (var linha in listaDaFatura)
+                    {
+                        // Teste de impressao da lista
+                        Console.WriteLine(String.Concat(linha[0], "|", linha[1], linha[2], "|", linha[3], "|", linha[4], "|", linha[5], "|", linha[6], "|", linha[7]));
+
+                        // TODO
+                        // realizar comparacoes
+                        // criar classe de gravacao de arquivos                        
                     }
                 }
                 // Processou arquivo com sucesso
+                Console.WriteLine("Leitura do arquivo de faturas realizada com sucesso!");
                 return true;
             }
             else
             {
-                Console.WriteLine("Arquivo não existe!\nInforme o caminho correto do arquivo de faturas!");
+                Console.WriteLine("Arquivo inexistente!\nInforme o caminho correto do arquivo de faturas!");
                 return false;
             }
         }
         catch (Exception e)
         {
-            Console.WriteLine("Erro na leitura da fatura:\n" + e.Message);
+            Console.WriteLine("Erro na leitura do arquivo de faturas:\n" + e.Message);
             return false;
         }
     }
 
-    public int Somar(int a, int b)
+    public bool GravarArquivoDeSaida(string arquivo, string linha)
     {
         try
         {
-            return a + b;
+            return true;
+
         }
         catch (Exception e)
         {
             Console.WriteLine("Erro:\n" + e.Message);
-            return 0;
+            return false;
         }
     }
 }
