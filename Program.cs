@@ -16,8 +16,8 @@ try
             string extensao = arquivoDeFaturas.Substring(arquivoDeFaturas.Length - 4);
             if (extensao == ".txt")
             {
-                Faturas faturas = new Faturas();
-                faturas.ProcessarFaturas(arquivoDeFaturas);
+                Validacoes validar = new Validacoes();
+                validar.ProcessarFaturas(arquivoDeFaturas);
             }
             else
             {
