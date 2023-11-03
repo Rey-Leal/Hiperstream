@@ -13,8 +13,7 @@ try
 
         if (!String.IsNullOrEmpty(arquivoDeFaturas))
         {
-            string extensao = arquivoDeFaturas.Substring(arquivoDeFaturas.Length - 4);
-            if (extensao == ".txt")
+            if (Path.GetExtension(arquivoDeFaturas) == ".txt")
             {
                 Validacoes validar = new Validacoes();
                 validar.ProcessarFaturas(arquivoDeFaturas);
@@ -28,8 +27,8 @@ try
         {
             Console.WriteLine("Obrigatório informar o caminho do diretório!");
         }
-
-        Console.WriteLine("Para repetir a execução digite 'sim' ou qualquer outra tecla para sair:");
+        
+        Console.WriteLine("\nPara repetir a execução digite 'sim' ou qualquer outra tecla para sair:");
         string entrada = Console.ReadLine();
         repetirExecucao = entrada.ToLower() == "sim" ? true : false;
         Console.Clear();
