@@ -32,10 +32,12 @@ public class Validacoes
                             // Criar funcao que possibilite gravar varios arquivos simultaneamente
 
                             // 1 Faturas com valores zero (valorZero.csv)
-                            // 2 Ate 6 paginas(ate06Paginas.csv)
-                            // 3 De 7 a 12 paginas(ate12Paginas.csv) ?
-                            // 4 mais que 12 paginas(mais12Paginas.csv)
-                            // 5 O número de páginas no arquivo de saída deve ser sempre par. ???
+                            //      Independentemente do número de páginas
+
+                            // 2 Ate 6 paginas (ate06Paginas.csv)
+                            // 3 De 7 a 12 paginas (ate12Paginas.csv) ?
+                            // 4 Mais que 12 paginas (mais12Paginas.csv)
+                            // 5    O número de páginas no arquivo de saída deve ser sempre par ???
 
                             // TESTE DE IMPRESSAO - APAGAR AO FINAL
                             Console.WriteLine(String.Concat(fatura.NomeCliente, "|", fatura.Cep, "|", fatura.RuaComComplemento, "|", fatura.Bairro, "|", fatura.Cidade, "|", fatura.Estado, "|", fatura.ValorFatura, "|", fatura.NumeroPaginas));
