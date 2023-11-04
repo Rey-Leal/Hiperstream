@@ -6,7 +6,7 @@ Teste para Desenvolvedor de Sistemas Pleno Hiperstream, utilizando as seguintes 
 * Leitura de faturas em formato texto através de StreamReaders
 * Orientação a objetos
 
-Observações:
+Observações para Depuração:
 * Sistema utiliza o Console C# do Visual Studio 
 * Para depuração do código fonte se faz necessário alguma versão básica do Visual Studio instalada, como por exemplo a gratuita "Community 2022"
 * O arquivo inicial do projeto é o "Program.cs"
