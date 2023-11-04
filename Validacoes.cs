@@ -72,31 +72,6 @@ public class Validacoes
         }
     }
 
-    // Valida faturas de acordo com as regras de tratamento estabelecidas
-    public bool ValidarFaturas(Faturas fatura)
-    {
-        try
-        {
-            // Retira espacos em branco
-            fatura.Cep = fatura.Cep;
-
-            // Verifica tamanho do CPF se e numerico e diferente de zero
-            if (fatura.Cep.Length >= 7 && fatura.Cep.Length <= 8 && double.TryParse(fatura.Cep, out _) && double.Parse(fatura.Cep) != 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("Erro:\n" + e.Message);
-            return false;
-        }
-    }
-
     // Cria aquivos de saida
     public bool CriaArquivosDeSaida(string diretorioDeSaida)
     {
@@ -124,6 +99,31 @@ public class Validacoes
             }
             return true;
 
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Erro:\n" + e.Message);
+            return false;
+        }
+    }
+
+    // Valida faturas de acordo com as regras de tratamento estabelecidas
+    public bool ValidarFaturas(Faturas fatura)
+    {
+        try
+        {
+            // Retira espacos em branco
+            fatura.Cep = fatura.Cep;
+
+            // Verifica tamanho do CPF se e numerico e diferente de zero
+            if (fatura.Cep.Length >= 7 && fatura.Cep.Length <= 8 && double.TryParse(fatura.Cep, out _) && double.Parse(fatura.Cep) != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         catch (Exception e)
         {
